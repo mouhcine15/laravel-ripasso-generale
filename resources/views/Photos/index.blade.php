@@ -2,6 +2,12 @@
 
 @section('content')
 
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+
 
     @if(count($photos) == 0)
 
@@ -28,6 +34,9 @@
                         <td>{{$photo->title}}</td>
                         <td>{{$photo->url}}</td>
                         <td><img class="photo-preview" src="{{$photo->url}}" alt="" srcset="" style="width:100px;height:100px;object-fit:cover;"></td>                                                                    
+                        <td>
+                            <a class="btn btn-info" href="{{ route('photos.show', ['photo' => $photo->id]) }}">DETAILS</a>
+                        </td>
                     </tr>            
 
                 @endforeach
