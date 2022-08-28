@@ -37,6 +37,9 @@
                         <td>
                             <a class="btn btn-info" href="{{ route('photos.show', ['photo' => $photo->id]) }}">DETAILS</a>
                         </td>
+                        <td>
+                            <a class="btn btn-success" href="{{ route('photos.edit', ['photo' => $photo->id]) }}">EDIT</a>
+                        </td>
                     </tr>            
 
                 @endforeach
