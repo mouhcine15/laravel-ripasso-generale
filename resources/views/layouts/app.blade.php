@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/back.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -66,6 +66,11 @@
                                     </form>
                                 </div>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('photos.create')}}" role="button">
+                                    NEW ITEM
+                                </a>
+                            </li>
                         @endguest
                     </ul>
                 </div>
@@ -73,7 +78,9 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                @yield('content')
+            </div>
         </main>
     </div>
 </body>
