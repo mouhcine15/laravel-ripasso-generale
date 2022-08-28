@@ -40,6 +40,14 @@
                         <td>
                             <a class="btn btn-success" href="{{ route('photos.edit', ['photo' => $photo->id]) }}">EDIT</a>
                         </td>
+                        <td>
+                            <form method='POST' action="{{ route('photos.destroy', ['photo' => $photo->id]) }}">
+                                @csrf
+                                @method('DELETE')
+        
+                                <input class="btn btn-danger" type="submit" value="DELETE">
+                            </form>
+                        </td>
                     </tr>            
 
                 @endforeach
